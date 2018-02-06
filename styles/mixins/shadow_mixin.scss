@@ -1,0 +1,13 @@
+@mixin border-shadow {
+  box-shadow: 0 2px 8px -1px #000;
+}
+
+@mixin base-input {
+  background-color: transparent;
+  border: none;
+  width: 300px;
+
+  &:active, &:focus {
+    outline: none;
+  }
+}

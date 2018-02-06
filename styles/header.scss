@@ -1,0 +1,15 @@
+.header-wrapper {
+  @include border-shadow;
+  display: flex;
+  align-items: center;
+  height: $header_height;
+  padding: 15px 30px;
+  background-color: $grey;
+
+  .title {
+    font-weight: normal;
+    font-size: 26px;
+    font-family: $Gotham;
+    color: $green-yellow;
+  }
+}

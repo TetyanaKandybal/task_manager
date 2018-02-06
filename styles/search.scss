@@ -1,0 +1,14 @@
+.search-wrapper {
+  background-color: $lighten-grey;
+  height: 30px;
+  border-radius: 5px;
+  margin-left: 55px;
+
+  input {
+    @include base-input;
+    height: 100%;
+    padding: 0 15px;
+    color: $white;
+    font-size: 14px;
+  }
+}

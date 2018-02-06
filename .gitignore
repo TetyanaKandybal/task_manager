@@ -1,0 +1,11 @@
+# FILES
+
+/package-lock.json
+
+# DIRECTORIES
+
+/build/
+/dist/
+/node_modules/
+/webpack-demo/
+/.idea/

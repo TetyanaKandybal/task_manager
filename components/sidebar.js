@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 
-export class Sidebar extends Component {
+export default class Sidebar extends Component {
     constructor(props) {
         super(props);
 
@@ -15,5 +14,3 @@ export class Sidebar extends Component {
         );
     }
 }
-
-export default Sidebar;

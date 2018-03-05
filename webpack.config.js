@@ -18,14 +18,15 @@ module.exports = {
     },
     watch: true,
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.js$/,
                 loader: 'babel-loader',
                 exclude: /node_modules/,
                 query: {
-                    presets: ['es2015', 'react']
-                }
+                  presets: ['es2015', 'react'],
+                  plugins: ['transform-class-properties']
+                },
             },
             {
                 test: /\.jsx$/,

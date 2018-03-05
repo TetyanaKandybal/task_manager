@@ -1,25 +1,26 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import React, {Component} from "react";
 
-import Search from "./search"
+import Search from "./search";
+import AddNewBoard from "../containers/add_board_container";
 
-export class Header extends Component {
-    constructor(props) {
-        super(props);
+export default class Header extends Component {
+  constructor(props) {
+    super(props);
+  }
 
-        this.state = {
-        };
-    }
+  render() {
+    return (
+        <header className="header-wrapper">
+          <div className="heading-section">
+            <h1 className="title">Logo</h1>
+            <Search/>
+          </div>
 
-    render() {
-        return (
-            <header className="header-wrapper">
-                <h1 className="title">Logo</h1>
-
-                <Search />
-            </header>
-        );
-    }
+          <div>
+            <AddNewBoard />
+          </div>
+        </header>
+    );
+  }
 }
 
-export default Header;

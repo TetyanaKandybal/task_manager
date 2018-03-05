@@ -1,0 +1,32 @@
+.modal-content {
+  background: $grey;
+  color: $green-yellow;
+
+  .form-input {
+    background: transparent;
+    border: 1px solid $green-yellow;
+    border-radius: 3px;
+    outline: none;
+    color: $white;
+    padding: 5px 10px;
+    width: 100%;
+  }
+
+  .form-group {
+    padding: 0 20px;
+  }
+
+  .control-btn + .control-btn {
+    margin-left: 10px;
+  }
+
+  .submit {
+    padding: 5px 10px;
+    border-radius: 3px;
+    border: 1px solid $green-yellow;
+  }
+}
+
+.modal-header, .modal-footer {
+  border: none;
+}

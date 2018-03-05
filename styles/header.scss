@@ -2,6 +2,7 @@
   @include border-shadow;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: $header_height;
   padding: 15px 30px;
   background-color: $grey;
@@ -12,4 +13,14 @@
     font-family: $Gotham;
     color: $green-yellow;
   }
+
+  .add-board-btn {
+    color: $green-yellow;
+    cursor: pointer;
+  }
+}
+
+.heading-section {
+  display: flex;
+  align-items: center;
 }

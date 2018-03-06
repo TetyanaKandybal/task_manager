@@ -1,16 +1,23 @@
-import React, {Component} from "react";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-import classnames from "classnames";
+import classnames from 'classnames';
 
 export default class Button extends Component {
   render() {
-    let classes = classnames({'base-btn': true}, this.props.className);
+    const classes = classnames({ 'base-btn': true }, this.props.className);
     return (
-        <button
-          className={classes}
-          onClick={this.props.onClick}>
-          {this.props.children}
-        </button>
+      <button
+        className={classes}
+        onClick={this.props.onClick}>
+        {this.props.children}
+      </button>
     );
   }
 }
+
+Button.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.any,
+  onClick: PropTypes.func
+};

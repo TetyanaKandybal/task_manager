@@ -1,15 +1,26 @@
-.header-wrapper {
+.header {
   @include border-shadow;
-  display: flex;
   align-items: center;
-  height: $header_height;
-  padding: 15px 30px;
   background-color: $grey;
+  display: flex;
+  height: $header_height;
+  justify-content: space-between;
+  padding: 15px 30px;
+
+  &__logo-section {
+    align-items: center;
+    display: flex;
+  }
 
   .title {
-    font-weight: normal;
-    font-size: 26px;
-    font-family: $Gotham;
     color: $green-yellow;
+    font-family: $Gotham;
+    font-size: 26px;
+    font-weight: normal;
+  }
+
+  .add-board-btn {
+    color: $green-yellow;
+    cursor: pointer;
   }
 }

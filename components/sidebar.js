@@ -1,19 +1,9 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import React, { Component } from 'react';
 
-export class Sidebar extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-        };
-    }
-
-    render() {
-        return (
-            <div className="nav-sidebar"></div>
-        );
-    }
+export default class Sidebar extends Component {
+  render() {
+    return (
+      <div className="nav-sidebar"></div>
+    );
+  }
 }
-
-export default Sidebar;

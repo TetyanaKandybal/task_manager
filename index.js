@@ -1,28 +1,24 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 
-import Header from './components/header.js';
-import ManagePage from './pages/manage_page.js';
+import store from './store';
+
+import Header from './components/header';
+import ManagePage from './pages/manage_page';
 
 class App extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-        };
-    }
-
-    render() {
-        return (
-            <div className="outer-wrapper">
-                <Header />
-                <div className="main-container">
-                    <ManagePage />
-                </div>
-                <footer></footer>
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div className="outer-wrapper">
+        <Header />
+        <div className="main-container">
+          <ManagePage />
+        </div>
+        <footer></footer>
+      </div>
+    );
+  }
 }
 
-ReactDOM.render(<App />, document.querySelector(".app"));
+ReactDOM.render(<Provider store={store}><App /></Provider>, document.querySelector('.app'));

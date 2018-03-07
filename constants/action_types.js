@@ -1,0 +1,3 @@
+export default {
+  GET_MANAGED_BOARDS: 'GET_MANAGED_BOARDS'
+};

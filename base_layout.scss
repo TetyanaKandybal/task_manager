@@ -4,9 +4,10 @@
   padding: 0;
 }
 
-body {
+body, html {
   background-color: $dark-grey;
   box-sizing: border-box;
+  height: 100%;
   margin: 0;
   padding: 0;
 }
@@ -14,9 +15,14 @@ body {
 .outer-wrapper {
   display: flex;
   flex-direction: column;
+  height: 100%;
 
   .main-container {
     display: flex;
     flex: 1 1 auto;
   }
+}
+
+.app {
+  height: 100%;
 }

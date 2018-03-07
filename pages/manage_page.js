@@ -1,24 +1,41 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
-import Sidebar from '../components/sidebar.js';
+import actions from '../actions/manage_actions';
 
-export class Manage extends Component {
-    constructor(props) {
-        super(props);
+class Manage extends Component {
+  componentWillMount = () => {
+    actions.getManagedBoardsData();
+  };
 
-        this.state = {
-        };
-    }
+  _renderBoards = () =>
+    this.props.boards.map((board, id) => this._renderBoard(board, id));
 
-    render() {
-        return (
-            <div className="manage-container">
-                <Sidebar />
-                <div className="manage-content"></div>
-            </div>
-        );
-    }
+  _renderBoard = (board, id) =>
+    (
+      <div key={id} className="board">
+        <div className="board__title">{board.title}</div>
+      </div>
+    );
+
+  render() {
+    return (
+      <div className="manage-page">
+        <div className="boards-section">{this.props.boards && this._renderBoards()}</div>
+      </div>
+    );
+  }
 }
 
-export default Manage;
+const mapStateToProps = (state) => {
+  return {
+    boards: state.boards
+  };
+};
+
+Manage.propTypes = {
+  boards: PropTypes.array
+};
+
+export default connect(mapStateToProps)(Manage);

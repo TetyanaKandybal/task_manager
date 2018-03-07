@@ -1,0 +1,6 @@
+{
+  "boards": [
+    { "id": 1, "title": "shedule" },
+    { "id": 2, "title": "project" }
+  ]
+}

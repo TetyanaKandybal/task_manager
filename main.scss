@@ -1,6 +1,6 @@
 @import "theme";
 @import "base_layout";
-@import "styles/mixins/shadow_mixin";
+@import "styles/mixins/mixins";
 
 @import "styles/base/button";
 @import "styles/base/modal";
@@ -8,5 +8,6 @@
 @import "styles/header";
 @import "styles/sidebar";
 @import "styles/search";
+@import "styles/add_board_modal";
 
 @import "styles/manage";

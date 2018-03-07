@@ -1,56 +1,67 @@
 import React, { Component } from 'react';
-import { Modal, FormGroup, FormControl } from 'react-bootstrap';
 import Icon from 'react-fontawesome';
 
 import Button from '../components/button';
+import TextInput from '../components/text_input';
+import Modal from '../components/modal/modal';
+import ModalFooter from '../components/modal/footer';
+import ModalHeader from '../components/modal/header';
 
+import actions from '../actions/manage_actions';
 
 export default class AddNewBoardContainer extends Component {
   state = {
-    isModalOpen: false
+    isModalOpen: false,
+    isValid: false
   };
 
   onModalToggle = () => {
     this.setState({ isModalOpen: !this.state.isModalOpen });
   };
 
+  onBoardTitleChange = (data) => {
+    this.setState({ boardTitle: data.value, isValid: data.isValid });
+  };
+
   onAddNewBoard = () => {
+    actions.addNewBoard({ title: this.state.boardTitle });
     this.onModalToggle();
   };
 
   render() {
     return (
-      <div>
+      <div className="adding-board-form">
         <Button onClick={() => this.onModalToggle()}>
           <Icon
             className="add-board-btn"
             name="plus" />
         </Button>
         <Modal
-          show={this.state.isModalOpen}
-          bsSize="sm"
+          isOpen={this.state.isModalOpen}
+          size="sm"
           onHide={() => this.onModalToggle()}>
-          <Modal.Header>
-            <Modal.Title>Add new board</Modal.Title>
-          </Modal.Header>
-          <FormGroup>
-            <FormControl
+          <ModalHeader>
+            <span>Add new board</span>
+          </ModalHeader>
+          <div className="adding-board-form__content">
+            <TextInput
               type="text"
-              bsClass="form-input"
-              placeholder="Type board name here" />
-          </FormGroup>
-          <Modal.Footer>
+              placeholder="Type board name here"
+              onChange={this.onBoardTitleChange} />
+          </div>
+          <ModalFooter>
             <Button
-              className="control-btn cancel"
+              className="control-btn control-btn--cancel"
               onClick={() => this.onModalToggle()}>
                 Cancel
             </Button>
             <Button
-              className="control-btn submit"
+              disabled={!this.state.isValid}
+              className="control-btn control-btn--submit"
               onClick={() => this.onAddNewBoard()}>
                 Confirm
             </Button>
-          </Modal.Footer>
+          </ModalFooter>
         </Modal>
       </div>
     );

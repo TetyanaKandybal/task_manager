@@ -2,8 +2,8 @@
   background: $grey;
   color: $green-yellow;
 
-  .form-input {
-    background: transparent;
+  .base-input {
+    @include base-input;
     border: 1px solid $green-yellow;
     border-radius: 3px;
     color: $white;
@@ -12,18 +12,20 @@
     width: 100%;
   }
 
-  .form-group {
-    padding: 0 20px;
-  }
-
   .control-btn + .control-btn {
     margin-left: 10px;
   }
 
-  .submit {
-    border: 1px solid $green-yellow;
-    border-radius: 3px;
-    padding: 5px 10px;
+  .control-btn {
+    &--submit {
+      border: 1px solid $green-yellow;
+      border-radius: 3px;
+      padding: 5px 10px;
+    }
+
+    &:disabled {
+      border-color: $dark-grey;
+    }
   }
 }
 

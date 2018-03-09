@@ -1,0 +1,42 @@
+.board-page {
+  display: flex;
+  flex-grow: 1;
+  padding: 20px;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  &__header {
+    align-items: center;
+    display: flex;
+    padding: 10px 0;
+  }
+
+  &__board-title {
+    color: $green-yellow;
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+
+  &__tasks {
+    background: $lighten-grey;
+    border-radius: 3px;
+    display: flex;
+    flex-grow: 1;
+  }
+
+  .edit-board-btn {
+    border: 1px solid $green-yellow;
+    border-radius: 3px;
+    color: $green-yellow;
+    margin-left: 20px;
+    padding: 2px 5px;
+
+    &:hover {
+      background-color: $lighten-grey;
+    }
+  }
+}

@@ -2,11 +2,10 @@ import pajax from 'pajax';
 
 import store from '../store';
 import types from '../constants/action_types';
-
-const envConfig = 'http://localhost:3000';
+import config from '../constants/config';
 
 const getManagedBoardsData = async () => {
-  const response = await pajax.get(`${envConfig}/boards`);
+  const response = await pajax.get(`${config.envConfig}/boards`);
 
   store.dispatch({
     type: types.GET_MANAGED_BOARDS,
@@ -15,7 +14,7 @@ const getManagedBoardsData = async () => {
 };
 
 const addNewBoard = async (boardInfo) => {
-  await pajax.post(`${envConfig}/boards`, boardInfo);
+  await pajax.post(`${config.envConfig}/boards`, boardInfo);
 
   store.dispatch({
     type: types.ADD_NEW_BOARD,

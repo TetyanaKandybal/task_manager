@@ -70,6 +70,7 @@
     "no-var": 2,
     "prefer-const": 2,
     "object-shorthand": 0,
+    "function-paren-newline": 0,
     "linebreak-style": [
       "error",
       "windows"

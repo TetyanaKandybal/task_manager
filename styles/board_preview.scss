@@ -1,0 +1,23 @@
+.board-preview {
+  display: flex;
+
+  & + & {
+    margin-top: 10px;
+  }
+
+  &__icon {
+    margin-right: 20px;
+  }
+
+  &__title {
+    color: $dark-grey;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-transform: capitalize;
+
+    &:hover {
+      color: $green-yellow;
+      text-decoration: none;
+    }
+  }
+}

@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 
 import actions from '../actions/manage_actions';
 
+import BoardPreview from '../components/board_preview';
+
 class Manage extends Component {
   componentWillMount = () => {
     actions.getManagedBoardsData();
@@ -14,9 +16,7 @@ class Manage extends Component {
 
   _renderBoard = (board, id) =>
     (
-      <div key={id} className="board">
-        <div className="board__title">{board.title}</div>
-      </div>
+      <BoardPreview board={board} keyId={id} />
     );
 
   render() {
@@ -30,7 +30,7 @@ class Manage extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    boards: state.boards
+    boards: state.manageReducers.boards
   };
 };
 

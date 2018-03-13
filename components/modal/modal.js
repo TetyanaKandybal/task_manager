@@ -10,9 +10,9 @@ export default class BaseModal extends Component {
     const classes = classnames({ 'base-modal': true }, this.props.className);
     return (
       <Modal
+        className={classes}
         show={this.props.isOpen}
         bsSize={this.props.size}
-        className={classes}
         onHide={() => this.props.onHide}>
         {this.props.children}
       </Modal>

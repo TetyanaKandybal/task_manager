@@ -52,8 +52,8 @@ export default class ModifyingBoardContainer extends Component {
                 Cancel
             </Button>
             <Button
-              disabled={!this.state.isValid}
               className="control-btn control-btn--submit"
+              disabled={!this.state.isValid}
               onClick={() => this.onModifyBoard()}>
                 Confirm
             </Button>

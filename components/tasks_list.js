@@ -7,17 +7,17 @@ import Task from './task';
 
 export default class TasksList extends Component {
 
-  _renderListHeader = () => <div className="task-list__header">{this.props.listOptions.title}</div>;
+  renderListHeader = () => <div className="task-list__header">{this.props.listOptions.title}</div>;
 
-  _renderTasks = () => this.props.tasks.map(task => <Task task={task} key={shortid.generate()} />);
+  renderTasks = () => this.props.tasks.map(task => <Task task={task} key={shortid.generate()} />);
 
   render() {
     return (
       <div className="task-list">
-        {this._renderListHeader()}
+        {this.renderListHeader()}
         <Separator />
         <div className="task-list__body">
-          {this._renderTasks()}
+          {this.renderTasks()}
         </div>
       </div>
     );

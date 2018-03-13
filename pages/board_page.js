@@ -16,7 +16,7 @@ class Board extends Component {
     actions.getBoardInfo(this.props.params.boardId);
   };
 
-  _renderBoardHeader = () => {
+  renderBoardHeader = () => {
     const control = (
       <Button
         className="edit-board-btn">
@@ -40,7 +40,7 @@ class Board extends Component {
     );
   };
 
-  _renderTasksSection = () => (
+  renderTasksSection = () => (
     <div className="board-page__tasks">
       {this.props.lists.map(({ tasks, ...list }) => (
         <TasksList
@@ -54,8 +54,8 @@ class Board extends Component {
   render() {
     const boardContent = this.props.boardInfo && (
       <div className="board-page__inner">
-        {this._renderBoardHeader()}
-        {this._renderTasksSection()}
+        {this.renderBoardHeader()}
+        {this.renderTasksSection()}
       </div>
     );
 

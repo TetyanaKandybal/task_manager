@@ -22,8 +22,8 @@ export default class Input extends Component {
     }, this.props.className);
     return (
       <input
-        type="text"
         className={classes}
+        type="text"
         defaultValue={this.props.value}
         placeholder={this.props.placeholder}
         onChange={this.onChange} />

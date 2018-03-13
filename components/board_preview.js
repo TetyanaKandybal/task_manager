@@ -12,8 +12,8 @@ export default class BoardPreview extends Component {
           className="board-preview__icon"
           name="clipboard" />
         <Link
-          to={`/boards/${this.props.board.id}`}
-          className="board-preview__title">
+          className="board-preview__title"
+          to={`/boards/${this.props.board.id}`}>
           {this.props.board.title}
         </Link>
       </div>

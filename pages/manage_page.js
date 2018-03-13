@@ -12,10 +12,10 @@ class Manage extends Component {
     actions.getManagedBoardsData();
   };
 
-  _renderBoards = () =>
-    this.props.boards.map((board, id) => this._renderBoard(board, id));
+  renderBoards = () =>
+    this.props.boards.map((board, id) => this.renderBoard(board, id));
 
-  _renderBoard = board =>
+  renderBoard = board =>
     (
       <BoardPreview board={board} key={shortid.generate()} />
     );
@@ -23,7 +23,7 @@ class Manage extends Component {
   render() {
     return (
       <div className="manage-page">
-        <div className="boards-section">{this.props.boards && this._renderBoards()}</div>
+        <div className="boards-section">{this.props.boards && this.renderBoards()}</div>
       </div>
     );
   }

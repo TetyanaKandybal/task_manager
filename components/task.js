@@ -13,5 +13,5 @@ export default class Task extends Component {
 }
 
 Task.propTypes = {
-  task: PropTypes.object,
+  task: PropTypes.object
 };

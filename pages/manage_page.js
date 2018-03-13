@@ -1,28 +1,29 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import shortid from 'shortid';
 
 import actions from '../actions/manage_actions';
+
+import BoardPreview from '../components/board_preview';
 
 class Manage extends Component {
   componentWillMount = () => {
     actions.getManagedBoardsData();
   };
 
-  _renderBoards = () =>
-    this.props.boards.map((board, id) => this._renderBoard(board, id));
+  renderBoards = () =>
+    this.props.boards.map((board, id) => this.renderBoard(board, id));
 
-  _renderBoard = (board, id) =>
+  renderBoard = board =>
     (
-      <div key={id} className="board">
-        <div className="board__title">{board.title}</div>
-      </div>
+      <BoardPreview board={board} key={shortid.generate()} />
     );
 
   render() {
     return (
       <div className="manage-page">
-        <div className="boards-section">{this.props.boards && this._renderBoards()}</div>
+        <div className="boards-section">{this.props.boards && this.renderBoards()}</div>
       </div>
     );
   }
@@ -30,7 +31,7 @@ class Manage extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    boards: state.boards
+    boards: state.manageReducers.boards
   };
 };
 

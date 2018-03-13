@@ -10,4 +10,8 @@
   &:active, &:focus {
     outline: none;
   }
+
+  &--invalid {
+    border-color: $coral;
+  }
 }

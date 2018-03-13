@@ -9,6 +9,7 @@ export default class Button extends Component {
     return (
       <button
         className={classes}
+        disabled={this.props.disabled}
         onClick={this.props.onClick}>
         {this.props.children}
       </button>
@@ -19,5 +20,6 @@ export default class Button extends Component {
 Button.propTypes = {
   className: PropTypes.string,
   children: PropTypes.any,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  disabled: PropTypes.bool
 };

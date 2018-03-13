@@ -24,6 +24,7 @@ export default class Input extends Component {
       <input
         type="text"
         className={classes}
+        defaultValue={this.props.value}
         placeholder={this.props.placeholder}
         onChange={this.onChange} />
     );
@@ -33,5 +34,6 @@ export default class Input extends Component {
 Input.propTypes = {
   className: PropTypes.string,
   placeholder: PropTypes.string,
+  value: PropTypes.string,
   onChange: PropTypes.func
 };

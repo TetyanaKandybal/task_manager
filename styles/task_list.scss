@@ -1,0 +1,23 @@
+.task-list {
+  border: 1px solid $dark-grey;
+  border-radius: 3px;
+  flex-basis: 250px;
+
+  & + & {
+    margin-left: 10px;
+  }
+
+  &__header {
+    color: $dark-grey;
+    display: flex;
+    font-weight: bold;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+}

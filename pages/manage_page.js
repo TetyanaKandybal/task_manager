@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import shortid from 'shortid';
 
 import actions from '../actions/manage_actions';
 
@@ -14,9 +15,9 @@ class Manage extends Component {
   _renderBoards = () =>
     this.props.boards.map((board, id) => this._renderBoard(board, id));
 
-  _renderBoard = (board, id) =>
+  _renderBoard = board =>
     (
-      <BoardPreview board={board} keyId={id} />
+      <BoardPreview board={board} key={shortid.generate()} />
     );
 
   render() {

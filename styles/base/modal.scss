@@ -1,10 +1,10 @@
 .modal-content {
   background: $grey;
-  color: $green-yellow;
+  color: $blue;
 
   .base-input {
     @include base-input;
-    border: 1px solid $green-yellow;
+    border: 1px solid $blue;
     border-radius: 3px;
     color: $white;
     outline: none;
@@ -18,7 +18,7 @@
 
   .control-btn {
     &--submit {
-      border: 1px solid $green-yellow;
+      border: 1px solid $blue;
       border-radius: 3px;
       padding: 5px 10px;
     }

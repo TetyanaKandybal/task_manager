@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Icon from 'react-fontawesome';
+
+import PropTypes from 'prop-types';
 
 import Button from '../components/button';
 import TextInput from '../components/text_input';
@@ -7,9 +8,7 @@ import Modal from '../components/modal/modal';
 import ModalFooter from '../components/modal/footer';
 import ModalHeader from '../components/modal/header';
 
-import actions from '../actions/manage_actions';
-
-export default class AddNewBoardContainer extends Component {
+export default class ModifyingBoardContainer extends Component {
   state = {
     isModalOpen: false,
     isValid: false
@@ -23,29 +22,26 @@ export default class AddNewBoardContainer extends Component {
     this.setState({ boardTitle: data.value, isValid: data.isValid });
   };
 
-  onAddNewBoard = () => {
-    actions.addNewBoard({ title: this.state.boardTitle });
+  onModifyBoard = () => {
+    this.props.action({ title: this.state.boardTitle, ...this.props.actionOptions });
     this.onModalToggle();
   };
 
   render() {
     return (
-      <div className="adding-board-form">
-        <Button onClick={() => this.onModalToggle()}>
-          <Icon
-            className="add-board-btn"
-            name="plus" />
-        </Button>
+      <div className="modifying-board-form">
+        { React.cloneElement(this.props.control, { onClick: () => this.onModalToggle() }) }
         <Modal
           isOpen={this.state.isModalOpen}
           size="sm"
           onHide={() => this.onModalToggle()}>
           <ModalHeader>
-            <span>Add new board</span>
+            {this.props.heading}
           </ModalHeader>
-          <div className="adding-board-form__content">
+          <div className="modifying-board-form__content">
             <TextInput
               type="text"
+              value={this.props.value}
               placeholder="Type board name here"
               onChange={this.onBoardTitleChange} />
           </div>
@@ -58,7 +54,7 @@ export default class AddNewBoardContainer extends Component {
             <Button
               disabled={!this.state.isValid}
               className="control-btn control-btn--submit"
-              onClick={() => this.onAddNewBoard()}>
+              onClick={() => this.onModifyBoard()}>
                 Confirm
             </Button>
           </ModalFooter>
@@ -67,3 +63,11 @@ export default class AddNewBoardContainer extends Component {
     );
   }
 }
+
+ModifyingBoardContainer.propTypes = {
+  actionOptions: PropTypes.object,
+  control: PropTypes.element,
+  heading: PropTypes.string,
+  action: PropTypes.func,
+  value: PropTypes.string
+};

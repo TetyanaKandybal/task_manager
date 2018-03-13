@@ -14,6 +14,16 @@ const getBoardInfo = async (boardId) => {
   });
 };
 
+const editBoard = async (board) => {
+  await pajax.put(`${config.envConfig}/boards/${board.id}`, board);
+
+  store.dispatch({
+    type: types.EDIT_BOARD,
+    board: board
+  });
+};
+
 export default {
-  getBoardInfo: getBoardInfo
+  getBoardInfo: getBoardInfo,
+  editBoard: editBoard
 };

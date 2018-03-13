@@ -16,9 +16,8 @@
   }
 
   &__board-title {
-    color: $green-yellow;
+    color: $blue;
     font-weight: bold;
-    text-transform: capitalize;
   }
 
   &__tasks {
@@ -26,12 +25,13 @@
     border-radius: 3px;
     display: flex;
     flex-grow: 1;
+    padding: 20px;
   }
 
   .edit-board-btn {
-    border: 1px solid $green-yellow;
+    border: 1px solid $blue;
     border-radius: 3px;
-    color: $green-yellow;
+    color: $blue;
     margin-left: 20px;
     padding: 2px 5px;
 

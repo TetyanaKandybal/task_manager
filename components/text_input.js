@@ -11,7 +11,7 @@ export default class Input extends Component {
   onChange = (e) => {
     const { value } = e.target;
     this.setState({ isValid: /\S/.test(value) }, () => this.props.onChange({
-      value: value, isValid: this.state.isValid
+      value: value, name: this.props.name, isValid: this.state.isValid
     }));
   };
 
@@ -24,6 +24,7 @@ export default class Input extends Component {
       <input
         className={classes}
         type="text"
+        name={this.props.name}
         defaultValue={this.props.value}
         placeholder={this.props.placeholder}
         onChange={this.onChange} />

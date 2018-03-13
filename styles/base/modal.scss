@@ -3,17 +3,12 @@
   color: $blue;
 
   .base-input {
-    @include base-input;
     border: 1px solid $blue;
     border-radius: 3px;
     color: $white;
     outline: none;
     padding: 5px 10px;
     width: 100%;
-  }
-
-  .control-btn + .control-btn {
-    margin-left: 10px;
   }
 
   .control-btn {

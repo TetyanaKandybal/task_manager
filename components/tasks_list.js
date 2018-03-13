@@ -4,6 +4,7 @@ import shortid from 'shortid';
 
 import Separator from './separator';
 import Task from './task';
+import AddNewTask from '../containers/add_task_container';
 
 export default class TasksList extends Component {
 
@@ -18,6 +19,9 @@ export default class TasksList extends Component {
         <Separator />
         <div className="task-list__body">
           {this.renderTasks()}
+          <AddNewTask
+            boardId={this.props.listOptions.boardId}
+            listId={this.props.listOptions.id} />
         </div>
       </div>
     );

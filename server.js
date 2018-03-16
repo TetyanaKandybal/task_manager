@@ -123,7 +123,7 @@ app.post('/api/boards/:id/lists', (req, res) => {
     return board.save((err) => {
       if (!err) {
         log.info('board updated');
-        return res.send({ board: board });
+        return res.send(list);
       }
 
       onPostError(res, err);

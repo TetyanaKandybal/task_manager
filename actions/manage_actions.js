@@ -14,11 +14,11 @@ const getManagedBoardsData = async () => {
 };
 
 const addNewBoard = async (boardInfo) => {
-  await pajax.post(`${config.envConfig}/boards`, boardInfo);
+  const response = await pajax.post(`${config.envConfig}/boards`, boardInfo);
 
   store.dispatch({
     type: types.ADD_NEW_BOARD,
-    board: boardInfo
+    board: response
   });
 };
 

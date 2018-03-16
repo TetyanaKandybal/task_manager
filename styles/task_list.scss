@@ -1,7 +1,7 @@
 .task-list {
-  border: 1px solid $dark-grey;
+  border: 1px solid $light-blue;
   border-radius: 3px;
-  flex-basis: 250px;
+  flex-basis: $list_col_width;
   height: 100%;
 
   & + & {
@@ -9,7 +9,7 @@
   }
 
   &__header {
-    color: $dark-grey;
+    color: $blue;
     display: flex;
     font-weight: bold;
     justify-content: center;

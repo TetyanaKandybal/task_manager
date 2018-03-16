@@ -22,6 +22,10 @@ const addNewTaskReducer = (prevState, taskInfo) => {
   return { ...prevState, lists: [...lists, tasksList] };
 };
 
+const addNewListReducer = (prevState, listInfo) => {
+  return { ...prevState, lists: [...prevState.lists, listInfo] };
+};
+
 const boardReducer = (state = {}, action) => {
   switch (action.type) {
   case types.GET_BOARD_INFO:
@@ -30,6 +34,8 @@ const boardReducer = (state = {}, action) => {
     return editBoardReducer(state, action.board);
   case types.ADD_NEW_TASK:
     return addNewTaskReducer(state, action.taskInfo);
+  case types.ADD_NEW_LIST:
+    return addNewListReducer(state, action.listInfo);
   default:
     return state;
   }

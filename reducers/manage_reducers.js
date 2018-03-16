@@ -1,15 +1,14 @@
 import types from '../constants/action_types';
 
-const addNewBoardReducer = (prevState, board) => {
-  const boards = [...prevState.boards, board];
+const addNewBoardReducer = (prevState, { _id, ...board }) => {
+  const boards = [...prevState.boards, { id: _id, ...board }];
 
   return { ...prevState, boards: boards };
 };
 
 const getManagedBoardsReducer = (prevState, boards) => {
   const boardsFormatted = boards.map(({ _id, ...board }) => {
-    board.id = _id;
-    return board;
+    return { id: _id, ...board };
   });
 
   return { ...prevState, boards: boardsFormatted };

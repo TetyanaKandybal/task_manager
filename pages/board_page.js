@@ -10,6 +10,7 @@ import Button from '../components/button';
 import TasksList from '../components/tasks_list';
 
 import EditBoard from '../containers/modify_board_container';
+import AddNewList from '../containers/add_list_container';
 
 class Board extends Component {
   componentWillMount = () => {
@@ -49,6 +50,8 @@ class Board extends Component {
           boardId={this.props.params.boardId}
           tasks={tasks} />)
       )}
+      <AddNewList
+        boardId={this.props.params.boardId} />
     </div>
   );
 

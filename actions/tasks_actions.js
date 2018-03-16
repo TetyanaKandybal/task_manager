@@ -5,12 +5,12 @@ import store from '../store';
 import types from '../constants/action_types';
 import config from '../constants/config';
 
-const addNewTask = async (taskInfo) => {
-  await pajax.post(`${config.envConfig}/tasks/`, taskInfo);
+const addNewTask = async ({ boardId, listId, ...taskInfo }) => {
+  await pajax.post(`${config.envConfig}/boards/${boardId}/lists/${listId}/tasks`, taskInfo);
 
   store.dispatch({
     type: types.ADD_NEW_TASK,
-    boardInfo: taskInfo
+    taskInfo: { listId, ...taskInfo }
   });
 };
 

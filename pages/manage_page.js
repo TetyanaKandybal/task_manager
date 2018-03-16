@@ -13,7 +13,7 @@ class Manage extends Component {
   };
 
   renderBoards = () =>
-    this.props.boards.map((board, id) => this.renderBoard(board, id));
+    this.props.boards.map((board, id) => this.renderBoard(board));
 
   renderBoard = board =>
     (

@@ -74,6 +74,6 @@ export default class AddTaskContainer extends Component {
 }
 
 AddTaskContainer.propTypes = {
-  boardId: PropTypes.number,
-  listId: PropTypes.number
+  boardId: PropTypes.string,
+  listId: PropTypes.string
 };

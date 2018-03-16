@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Icon from 'react-fontawesome';
 import PropTypes from 'prop-types';
-import shortid from  'shortid';
+import shortid from 'shortid';
 
 import actions from '../actions/board_actions';
 
@@ -46,6 +46,7 @@ class Board extends Component {
         <TasksList
           key={shortid.generate()}
           listOptions={list}
+          boardId={this.props.params.boardId}
           tasks={tasks} />)
       )}
     </div>

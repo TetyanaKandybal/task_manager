@@ -5,7 +5,7 @@
   display: flex;
   height: $header_height;
   justify-content: space-between;
-  padding: 15px 30px;
+  padding: 15px 35px;
   flex: none;
 
   &__logo-section {
@@ -13,15 +13,8 @@
     display: flex;
   }
 
-  .title {
+  &__logo {
     color: $blue;
-    font-family: $Gotham;
-    font-size: 26px;
-    font-weight: normal;
-  }
-
-  .add-board-btn {
-    color: $blue;
-    cursor: pointer;
+    font-size: 3.5rem;
   }
 }

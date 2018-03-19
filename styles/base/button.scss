@@ -23,3 +23,16 @@
     color: $white;
   }
 }
+
+.icon-btn {
+  @include border-shadow;
+  color: $blue;
+  background: $lighten-grey;
+  padding: 5px 10px;
+  border-radius: 50%;
+
+  &:hover {
+    background-color: $blue;
+    color: $white;
+  }
+}

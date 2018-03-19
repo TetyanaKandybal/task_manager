@@ -22,7 +22,17 @@ const addNewBoard = async (boardInfo) => {
   });
 };
 
+const deleteBoard = async (id) => {
+  await pajax.delete(`${config.envConfig}/boards/${id}`);
+
+  store.dispatch({
+    type: types.DELETE_BOARD,
+    boardId: id
+  });
+};
+
 export default {
   getManagedBoardsData: getManagedBoardsData,
-  addNewBoard: addNewBoard
+  addNewBoard: addNewBoard,
+  deleteBoard: deleteBoard
 };

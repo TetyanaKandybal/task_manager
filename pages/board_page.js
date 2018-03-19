@@ -20,7 +20,7 @@ class Board extends Component {
   renderBoardHeader = () => {
     const control = (
       <Button
-        className="framed-btn">
+        className="icon-btn">
         <Icon
           name="pencil" />
       </Button>

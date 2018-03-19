@@ -65,6 +65,8 @@ const onPostError = (res, err) => {
   log.info('Internal error(%d): %s', res.statusCode, err.message);
 };
 
+// BOARDS
+
 app.get('/api/boards', (req, res) => BoardsModel.find((err, boards) => {
   if (!err) {
     return res.send(boards);
@@ -72,6 +74,20 @@ app.get('/api/boards', (req, res) => BoardsModel.find((err, boards) => {
 
   onGetError(res, err);
 }));
+
+app.get('/api/boards/:id', (req, res) => {
+  return BoardsModel.findById(req.params.id, (err, board) => {
+    if (!board) {
+      res.statusCode = 404;
+      return res.send({ error: 'Not found' });
+    }
+    if (!err) {
+      return res.send(board);
+    }
+
+    onGetError(res, err);
+  });
+});
 
 app.post('/api/boards', (req, res) => {
   const board = new BoardsModel({
@@ -107,6 +123,19 @@ app.put('/api/boards/:id', (req, res) => {
   });
 });
 
+app.delete('/api/boards/:id', (req, res) => (
+  BoardsModel.findByIdAndRemove(req.params.id, (err) => {
+    if (err) {
+      return res.status(500).send(err);
+    }
+
+    return res.send();
+  })
+));
+
+
+// LISTS
+
 app.post('/api/boards/:id/lists', (req, res) => {
   const list = new ListsModel({
     title: req.body.title
@@ -131,6 +160,8 @@ app.post('/api/boards/:id/lists', (req, res) => {
   });
 });
 
+// TASKS
+
 app.post('/api/boards/:boardId/lists/:listId/tasks', (req, res) => {
   const task = new TasksModel({
     summary: req.body.summary,
@@ -145,20 +176,6 @@ app.post('/api/boards/:boardId/lists/:listId/tasks', (req, res) => {
         return res.send();
       }
     });
-  });
-});
-
-app.get('/api/boards/:id', (req, res) => {
-  return BoardsModel.findById(req.params.id, (err, board) => {
-    if (!board) {
-      res.statusCode = 404;
-      return res.send({ error: 'Not found' });
-    }
-    if (!err) {
-      return res.send(board);
-    }
-
-    onGetError(res, err);
   });
 });
 

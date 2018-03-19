@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import shortid from 'shortid';
 import mapValues from 'lodash/mapValues';
 import map from 'lodash/map';
 import reduce from 'lodash/reduce';
@@ -45,11 +44,11 @@ export default class Form extends Component {
 
   renderToggler = () => React.cloneElement(this.props.toggler, { onClick: () => this.onFormToggle() });
 
-  renderFields = () => map(this.state.fields, ({ className, ...props }) => (
+  renderFields = () => map((this.state.fields), ({ className, name, ...props }, idx) => (
     <TextInput
       className={`form-field ${className}`}
       onChange={data => this.onFieldChange(data)}
-      key={shortid.generate()}
+      key={`name-${idx}`}
       {...props} />
   ));
 

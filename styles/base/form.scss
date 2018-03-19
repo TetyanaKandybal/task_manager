@@ -1,0 +1,38 @@
+.form-panel {
+  border: 1px solid $blue;
+  border-top: none;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+
+  &__field {
+    width: auto;
+    border-radius: 3px;
+    border: 1px solid $blue;
+    padding: 5px;
+    color: $white;
+
+    & + & {
+      margin-top: 10px;
+    }
+  }
+
+  &__footer {
+    margin-top: 20px;
+  }
+
+  &__submit-btn {
+    padding: 5px 15px;
+    background: $blue;
+    color: $white;
+    font-weight: bold;
+    border-radius: 3px;
+
+    &:disabled {
+      color: $white;
+    }
+  }
+}

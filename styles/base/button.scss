@@ -6,4 +6,33 @@
   &:disabled {
     color: $dark-grey;
   }
+
+  & + & {
+    margin-left: 10px;
+  }
+}
+
+.framed-btn {
+  border: 1px solid $blue;
+  border-radius: 3px;
+  color: $blue;
+  padding: 4px 7px;
+
+  &:hover {
+    background-color: $blue;
+    color: $white;
+  }
+}
+
+.icon-btn {
+  @include border-shadow;
+  color: $blue;
+  background: $lighten-grey;
+  padding: 5px 10px;
+  border-radius: 50%;
+
+  &:hover {
+    background-color: $blue;
+    color: $white;
+  }
 }

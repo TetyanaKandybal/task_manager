@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Icon from 'react-fontawesome';
 import PropTypes from 'prop-types';
-import shortid from  'shortid';
+import shortid from 'shortid';
 
 import actions from '../actions/board_actions';
 
@@ -10,6 +10,7 @@ import Button from '../components/button';
 import TasksList from '../components/tasks_list';
 
 import EditBoard from '../containers/modify_board_container';
+import AddNewList from '../containers/add_list_container';
 
 class Board extends Component {
   componentWillMount = () => {
@@ -19,7 +20,7 @@ class Board extends Component {
   renderBoardHeader = () => {
     const control = (
       <Button
-        className="edit-board-btn">
+        className="icon-btn">
         <Icon
           name="pencil" />
       </Button>
@@ -46,8 +47,11 @@ class Board extends Component {
         <TasksList
           key={shortid.generate()}
           listOptions={list}
+          boardId={this.props.params.boardId}
           tasks={tasks} />)
       )}
+      <AddNewList
+        boardId={this.props.params.boardId} />
     </div>
   );
 

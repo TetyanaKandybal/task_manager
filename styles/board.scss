@@ -13,11 +13,13 @@
     align-items: center;
     display: flex;
     padding: 10px 0;
+    flex: none;
   }
 
   &__board-title {
     color: $blue;
     font-weight: bold;
+    margin-right: 20px;
   }
 
   &__tasks {
@@ -26,17 +28,7 @@
     display: flex;
     flex-grow: 1;
     padding: 20px;
-  }
-
-  .edit-board-btn {
-    border: 1px solid $blue;
-    border-radius: 3px;
-    color: $blue;
-    margin-left: 20px;
-    padding: 2px 5px;
-
-    &:hover {
-      background-color: $lighten-grey;
-    }
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 }

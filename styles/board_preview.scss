@@ -1,11 +1,27 @@
 .board-preview {
   display: flex;
+  flex-direction: column;
 
   & + & {
     margin-top: 10px;
+
+    &:before {
+      background: linear-gradient(to right, transparent, $blue, transparent);
+      content: '';
+      flex: 1;
+      height: 1px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
   }
 
   &__icon {
+    color: $blue;
+    font-size: 2rem;
     margin-right: 20px;
   }
 
@@ -18,5 +34,9 @@
       color: $blue;
       text-decoration: none;
     }
+  }
+
+  &__delete-board-btn {
+    background: $grey;
   }
 }

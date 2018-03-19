@@ -21,5 +21,8 @@ Button.propTypes = {
   className: PropTypes.string,
   children: PropTypes.any,
   onClick: PropTypes.func,
-  disabled: PropTypes.bool
+  disabled: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.func
+  ])
 };

@@ -13,12 +13,9 @@ class Manage extends Component {
   };
 
   renderBoards = () =>
-    this.props.boards.map((board, id) => this.renderBoard(board, id));
+    this.props.boards.map(board => this.renderBoard(board));
 
-  renderBoard = board =>
-    (
-      <BoardPreview board={board} key={shortid.generate()} />
-    );
+  renderBoard = board => (<BoardPreview board={board} key={shortid.generate()} />);
 
   render() {
     return (
@@ -29,11 +26,7 @@ class Manage extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    boards: state.manageReducers.boards
-  };
-};
+const mapStateToProps = state => ({ boards: state.manageReducers.boards });
 
 Manage.propTypes = {
   boards: PropTypes.array

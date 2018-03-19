@@ -10,16 +10,18 @@ import actions from '../actions/manage_actions';
 export default class Header extends Component {
   render() {
     const control = (
-      <Button >
+      <Button
+        className="icon-btn" >
         <Icon
-          className="add-board-btn"
           name="plus" />
       </Button>
     );
     return (
       <header className="header">
         <div className="header__logo-section">
-          <h1 className="title">Logo</h1>
+          <Icon
+            className="header__logo"
+            name="tasks" />
           <Search />
         </div>
 

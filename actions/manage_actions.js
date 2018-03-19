@@ -14,15 +14,25 @@ const getManagedBoardsData = async () => {
 };
 
 const addNewBoard = async (boardInfo) => {
-  await pajax.post(`${config.envConfig}/boards`, boardInfo);
+  const response = await pajax.post(`${config.envConfig}/boards`, boardInfo);
 
   store.dispatch({
     type: types.ADD_NEW_BOARD,
-    board: boardInfo
+    board: response
+  });
+};
+
+const deleteBoard = async (id) => {
+  await pajax.delete(`${config.envConfig}/boards/${id}`);
+
+  store.dispatch({
+    type: types.DELETE_BOARD,
+    boardId: id
   });
 };
 
 export default {
   getManagedBoardsData: getManagedBoardsData,
-  addNewBoard: addNewBoard
+  addNewBoard: addNewBoard,
+  deleteBoard: deleteBoard
 };

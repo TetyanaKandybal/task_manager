@@ -2,10 +2,9 @@
   background-color: $lighten-grey;
   border-radius: 5px;
   height: 30px;
-  margin-left: 55px;
+  margin-left: 20px;
 
   input {
-    @include base-input;
     color: $white;
     font-size: 14px;
     height: 100%;

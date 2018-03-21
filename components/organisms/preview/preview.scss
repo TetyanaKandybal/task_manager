@@ -1,0 +1,17 @@
+.preview {
+  display: flex;
+  flex-direction: column;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__section {
+    @include first-child() {
+      &:not(:first-child) {
+        margin-left: 10px;
+      }
+    }
+  }
+}

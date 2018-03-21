@@ -1,0 +1,23 @@
+.card {
+  @include border-shadow;
+  background: $white;
+  box-shadow: 0 2px 8px -1px #000;
+  color: $dark-grey;
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    background: $light-blue;
+    color: $white;
+    display: flex;
+    font-weight: bold;
+    justify-content: center;
+    padding: 5px 10px;
+  }
+
+  &__content {
+    flex-basis: 70px;
+    flex-grow: 1;
+    padding: 10px;
+  }
+}

@@ -1,0 +1,17 @@
+.list-template {
+  flex: 1;
+
+    @include first-child() {
+      &:not(:first-child) {
+        margin-top: 10px;
+
+        &:before {
+          background: linear-gradient(to right, transparent, $blue, transparent);
+          content: '';
+          flex: 1;
+          height: 1px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+}

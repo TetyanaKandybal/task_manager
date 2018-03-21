@@ -2,21 +2,31 @@
 @import "base_layout";
 @import "styles/mixins/mixins";
 
-@import "styles/base/button";
-@import "styles/base/modal";
-@import "styles/base/text_input";
-@import "styles/base/form";
+// ATOMS
+@import "components/atoms/button/button";
+@import "components/atoms/icon/icon";
+@import "components/atoms/link/link";
+@import "components/atoms/input/input";
+@import "components/atoms/separator/separator";
+@import "components/molecules/card/card";
 
-@import "styles/header";
-@import "styles/sidebar";
-@import "styles/search";
-@import "styles/modify_board_modal";
-@import "styles/board_preview";
-@import "styles/task_list";
-@import "styles/separator";
-@import "styles/task";
-@import "styles/add_task";
-@import "styles/add_list";
+// MOLECULES
+@import "components/molecules/iconButton/icon_button";
+@import "components/molecules/search/search";
+@import "components/molecules/column/column";
+@import "components/molecules/modal/modal";
 
-@import "styles/manage";
-@import "styles/board";
+// ORGANISMS
+@import "components/organisms/preview/preview";
+@import "components/organisms/boundForm/bound_form";
+@import "components/organisms/header/header";
+@import "components/organisms/form/form";
+
+// TEMPLATES
+@import "templates/list/list";
+@import "templates/innerContent/inner_content";
+
+
+// PAGES
+@import "pages/managePage/manage";
+@import "pages/boardPage/board";

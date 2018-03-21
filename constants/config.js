@@ -1,3 +1,4 @@
 export default {
-  envConfig: 'http://localhost:3000/api'
+  serverConfig: 'http://localhost:3000/api',
+  envConfig: 'http://localhost:8080'
 };

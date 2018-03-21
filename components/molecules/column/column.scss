@@ -1,0 +1,28 @@
+.column {
+  border: 1px solid $light-blue;
+  border-radius: 3px;
+  flex-basis: $list_col_width;
+  height: 100%;
+
+  &__header {
+    color: $blue;
+    display: flex;
+    font-weight: bold;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+
+    @include first-child() {
+      flex: auto;
+
+      &:not(:first-child) {
+        margin-top: 10px;
+      }
+    }
+  }
+}

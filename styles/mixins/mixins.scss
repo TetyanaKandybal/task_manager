@@ -2,6 +2,12 @@
   box-shadow: 0 2px 8px -1px #000;
 }
 
+@mixin first-child() {
+  & > * {
+    @content
+  }
+}
+
 @mixin base-input {
   background-color: transparent;
   border: none;

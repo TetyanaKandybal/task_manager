@@ -5,9 +5,9 @@ import { Router, Route, browserHistory } from 'react-router';
 
 import store from './store';
 
-import Header from './components/header';
-import ManagePage from './pages/manage_page';
-import Board from './pages/board_page';
+import Header from './components/organisms/header/Header';
+import ManagePage from './pages/managePage/ManagePage';
+import Board from './pages/boardPage/BoardPage';
 
 
 class App extends Component {

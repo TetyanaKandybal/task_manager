@@ -1,0 +1,37 @@
+.base-btn {
+  background: transparent;
+  border: none;
+  outline: none;
+
+  &:disabled {
+    color: $dark-grey;
+  }
+
+}
+
+.framed-btn {
+  border: 1px solid $blue;
+  border-radius: 3px;
+  color: $blue;
+  padding: 4px 7px;
+
+  &:hover {
+    background-color: $blue;
+
+    .icon {
+      color: $white;
+    }
+  }
+}
+
+.submit-btn {
+  background: $blue;
+  border-radius: 3px;
+  color: $white;
+  font-weight: bold;
+  padding: 5px 15px;
+
+  &:disabled {
+    color: $white;
+  }
+}

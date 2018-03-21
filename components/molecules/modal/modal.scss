@@ -1,0 +1,20 @@
+.modal-content {
+  background: $grey;
+  border: 1px solid $blue;
+  border-radius: 3px;
+  color: $blue;
+}
+
+.modal-header {
+  border-bottom: 1px solid $blue;
+}
+
+.modal-footer {
+  border-top: none;
+
+  @include first-child() {
+    &:not(:first-child) {
+      margin-left: 10px;
+    }
+  }
+}

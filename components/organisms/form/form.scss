@@ -1,0 +1,33 @@
+.form-panel {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top: none;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+
+  @include first-child() {
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
+  }
+
+  &__field {
+    border: 1px solid $blue;
+    border-radius: 3px;
+    color: $white;
+    padding: 5px;
+    width: auto;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: flex-end;
+
+    @include first-child() {
+      &:not(:first-child) {
+        margin-left: 10px;
+      }
+    }
+  }
+}
